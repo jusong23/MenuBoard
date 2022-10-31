@@ -5,12 +5,12 @@
 using namespace std;
 
 Student::Student() {
-    this->id = -1;
     memset(this->name, 0x00, MAX_NAME_LEN + 1);
     this->score = -1.0;
+    this->id = -1;
 }
 
-Student::Student(int id, string name, double score) {
+Student::Student(string name, double score, int id) {
     this->id = id;
     memcpy(this->name, name.c_str(), MAX_NAME_LEN);
     this->score = score;

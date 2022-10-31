@@ -8,7 +8,7 @@ using namespace std;
 class Student {
   public:
     Student();
-    Student(int id, string name, double score);
+    Student(string name, double score, int id);
     void setId(int id);
     void setName(string name);
     void setScore(double score);

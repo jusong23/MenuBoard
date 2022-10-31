@@ -14,29 +14,32 @@ int main(void) {
 // 학생들의 정보를 입력받고, 연결 리스트에 저장 
 list<Student> stuList;
 while (1) {
-        string input;
-        cout << "<< MenuCode (input \'q\' to terminate): ";
-        cin >> input;
 
-        if (input.compare("q") == 0) {
+        string name = "";
+        cout << "<< Menu Name: (input \'q\' to terminate): ";
+        cin >> name;
+
+        if (name.compare("q") == 0) {
         cout << ">> Terminate input." << endl; 
         break;
         }
-        int id = stoi(input);
-
-        string name = "";
-        cout << "<< Menu Name: ";
-        cin >> name;
 
         double score = -1.0;
-        cout << "<< Star: ";
+        cout << "<< Option: ";
         cin >> score;
-        if (score > 5) {
-        cout << ">> Please Input 0 to 5 point." << endl; 
+        if (score > 4 && score < 1) {
+        cout << ">> Please Input 1 to 4." << endl; 
         break;
         }
 
-        Student stu(id, name, score);
+        string input;
+        cout << "<< Price: ";
+        cin >> input;
+
+
+        int id = stoi(input);
+
+        Student stu(name, score, id);
         stuList.push_back(stu);
         cout << ">> Successfully added to list!" << endl;
     }
