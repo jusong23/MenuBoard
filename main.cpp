@@ -15,18 +15,27 @@ int main(void) {
 list<Student> stuList;
 while (1) {
         string input;
-        cout << "<< ID (input \'q\' to terminate): ";
+        cout << "<< MenuCode (input \'q\' to terminate): ";
         cin >> input;
+
         if (input.compare("q") == 0) {
-        cout << ">> Terminate input." << endl; break;
+        cout << ">> Terminate input." << endl; 
+        break;
         }
         int id = stoi(input);
+
         string name = "";
-        cout << "<< Name: ";
+        cout << "<< Menu Name: ";
         cin >> name;
+
         double score = -1.0;
-        cout << "<< Score: ";
+        cout << "<< Star: ";
         cin >> score;
+        if (score > 5) {
+        cout << ">> Please Input 0 to 5 point." << endl; 
+        break;
+        }
+
         Student stu(id, name, score);
         stuList.push_back(stu);
         cout << ">> Successfully added to list!" << endl;
