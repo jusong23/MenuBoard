@@ -11,7 +11,7 @@ int main()
 {
     // MenuBoardList.dat 파일을 읽기
     MenuBoard std;
-    char *pathname = "./MenuBoardList.dat";
+    char *pathname =  (char*)"./MenuBoardList.dat";
 
     int fd = open(pathname, O_RDONLY);
     struct stat fileInfo;
@@ -23,5 +23,5 @@ int main()
         cout << "Menu : " << std.getName() << " Score : " << std.getoption()
              << " Price : " << std.getprice() << endl;
     }
-    printf("show %ld menu\n", fileInfo.st_size / sizeof(MenuBoard));
+    printf("show %llu menu\n", fileInfo.st_size / sizeof(MenuBoard));
 }
